@@ -20,6 +20,10 @@ abstract class AbstractComponent extends \CApplicationComponent
      * @var array Command line options
      */
     public $options = array();
+    /**
+     * @var string Path to directory used for temporary files
+     */
+    public $tempdir;
 
     /**
      * Creates and returns generator instance.
@@ -33,13 +37,24 @@ abstract class AbstractComponent extends \CApplicationComponent
      */
     public function __call($name, $parameters)
     {
-        if (method_exists('\Knp\Snappy\GeneratorInterface', $name)) {
-            return call_user_func_array(
-                array($this->getGenerator(), $name),
-                $parameters
-            );
+        if (!method_exists('\Knp\Snappy\GeneratorInterface', $name)) {
+            return parent::__call($name, $parameters);
         }
 
-        return parent::__call($name, $parameters);
+        $generator = $this->getGenerator()
+            ->setTemporaryFolder($this->resolveTempdir())
+        ;
+
+        return call_user_func_array(array($generator, $name), $parameters);
+    }
+
+    /**
+     * Resolves path to temporary directory.
+     *
+     * @return string|null
+     */
+    protected function resolveTempdir()
+    {
+        return $this->tempdir ?: \Yii::app()->params['snappy_tempdir'];
     }
 }

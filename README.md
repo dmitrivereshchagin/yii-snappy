@@ -21,15 +21,19 @@ following in configuration `components` section:
     'class' => '\Snappy\PdfComponent',
     'binary' => '/usr/local/bin/wkhtmltopdf',
     'options' => array('orientation' => 'landscape'),
+    'tempdir' => __DIR__.'/../runtime/pdf',
 ),
 'image' => array(
     'class' => '\Snappy\ImageComponent',
     'binary' => '/usr/local/bin/wkhtmltoimage',
+    'tempdir' => __DIR__.'/../runtime/image',
 ),
 ```
 
 Specifying paths to binaries is mandatory.  Optionally you can configure
 default command line arguments that can be overridden or adjusted later.
+It is also possible to set temporary directory for both components using
+`snappy_tempdir` application parameter.
 
 ## Usage
 
