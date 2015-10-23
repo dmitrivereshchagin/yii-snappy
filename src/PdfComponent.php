@@ -2,10 +2,13 @@
 
 namespace Snappy;
 
+/**
+ * PDF generator component.
+ */
 class PdfComponent extends AbstractComponent
 {
     /**
-     * {@inheritdoc}
+     * @return \Knp\Snappy\Pdf
      */
     protected function getGenerator()
     {

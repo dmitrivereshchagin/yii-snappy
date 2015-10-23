@@ -2,10 +2,13 @@
 
 namespace Snappy;
 
+/**
+ * Image generator component.
+ */
 class ImageComponent extends AbstractComponent
 {
     /**
-     * {@inheritdoc}
+     * @return \Knp\Snappy\Image
      */
     protected function getGenerator()
     {

@@ -2,19 +2,29 @@
 
 namespace Snappy;
 
+/**
+ * Base class for generator components.
+ *
+ * @method void generate(array|string $input, string $output, array $options, bool $overwrite)
+ * @method void generateFromHtml(array|string $html, string $output, array $options, bool $overwrite)
+ * @method string getOutput(array|string $input, array $options)
+ * @method string getOutputFromHtml(array|string $html, array $options)
+ */
 abstract class AbstractComponent extends \CApplicationComponent
 {
     /**
-     * @var string
+     * @var string Path to wkhtmltox binary
      */
     public $binary;
     /**
-     * @var array
+     * @var array Command line options
      */
     public $options = array();
 
     /**
-     * @return \Knp\Snappy\GeneratorInterface
+     * Creates and returns generator instance.
+     *
+     * @return \Knp\Snappy\AbstractGenerator
      */
     abstract protected function getGenerator();
 
