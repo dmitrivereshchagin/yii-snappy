@@ -1,6 +1,7 @@
 {
     "name": "dmitrivereshchagin/yii-snappy",
     "description": "Basic wrapper around Snappy implemented as Yii component",
+    "keywords": ["pdf", "snappy", "wkhtmltoimage", "wkhtmltopdf", "yii"],
     "license": "MIT",
     "require": {
         "php": ">=5.3.0",
