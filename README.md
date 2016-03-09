@@ -97,8 +97,8 @@ Yii::app()->request->sendFile(
 
 ## Credits
 
-This code is based on Snappy library.  Snappy has been originally
-developed by [KnpLabs] [k] team.
+This code uses Snappy library.  Snappy has been originally developed
+by [KnpLabs] [k] team.
 
 [c]: https://getcomposer.org
 [k]: http://knplabs.com
