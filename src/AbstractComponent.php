@@ -58,6 +58,6 @@ abstract class AbstractComponent extends CApplicationComponent
      */
     protected function resolveTempdir()
     {
-        return $this->tempdir ?: Yii::app()->params['snappy_tempdir'];
+        return $this->tempdir ?: Yii::app()->getParams()->itemAt('snappyTempdir');
     }
 }

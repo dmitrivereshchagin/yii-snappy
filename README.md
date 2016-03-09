@@ -33,7 +33,7 @@ following in configuration `components` section:
 Specifying paths to binaries is mandatory.  Optionally you can configure
 default command line arguments that can be overridden or adjusted later.
 It is also possible to set temporary directory for both components using
-`snappy_tempdir` application parameter.
+`snappyTempdir` application parameter.
 
 ## Usage
 
