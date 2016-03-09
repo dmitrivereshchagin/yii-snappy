@@ -2,16 +2,18 @@
 
 namespace Snappy;
 
+use Knp\Snappy\Pdf;
+
 /**
  * PDF generator component.
  */
 class PdfComponent extends AbstractComponent
 {
     /**
-     * @return \Knp\Snappy\Pdf
+     * @return Pdf
      */
     protected function getGenerator()
     {
-        return new \Knp\Snappy\Pdf($this->binary, $this->options);
+        return new Pdf($this->binary, $this->options);
     }
 }

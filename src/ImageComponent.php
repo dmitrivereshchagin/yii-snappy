@@ -2,16 +2,18 @@
 
 namespace Snappy;
 
+use Knp\Snappy\Image;
+
 /**
  * Image generator component.
  */
 class ImageComponent extends AbstractComponent
 {
     /**
-     * @return \Knp\Snappy\Image
+     * @return Image
      */
     protected function getGenerator()
     {
-        return new \Knp\Snappy\Image($this->binary, $this->options);
+        return new Image($this->binary, $this->options);
     }
 }

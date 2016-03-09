@@ -2,6 +2,9 @@
 
 namespace Snappy;
 
+use CApplicationComponent;
+use Yii;
+
 /**
  * Base class for generator components.
  *
@@ -10,7 +13,7 @@ namespace Snappy;
  * @method string getOutput(array|string $input, array $options)
  * @method string getOutputFromHtml(array|string $html, array $options)
  */
-abstract class AbstractComponent extends \CApplicationComponent
+abstract class AbstractComponent extends CApplicationComponent
 {
     /**
      * @var string Path to wkhtmltox binary
@@ -37,7 +40,7 @@ abstract class AbstractComponent extends \CApplicationComponent
      */
     public function __call($name, $parameters)
     {
-        if (!method_exists('\Knp\Snappy\GeneratorInterface', $name)) {
+        if (!method_exists('Knp\Snappy\GeneratorInterface', $name)) {
             return parent::__call($name, $parameters);
         }
 
@@ -55,6 +58,6 @@ abstract class AbstractComponent extends \CApplicationComponent
      */
     protected function resolveTempdir()
     {
-        return $this->tempdir ?: \Yii::app()->params['snappy_tempdir'];
+        return $this->tempdir ?: Yii::app()->params['snappy_tempdir'];
     }
 }
