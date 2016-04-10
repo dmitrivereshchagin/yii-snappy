@@ -36,7 +36,7 @@ abstract class AbstractComponent extends CApplicationComponent
     abstract protected function getGenerator();
 
     /**
-     * {@inheritdoc}
+     * @inheritDoc
      */
     public function __call($name, $parameters)
     {
