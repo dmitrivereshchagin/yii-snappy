@@ -29,9 +29,9 @@ abstract class AbstractComponent extends CApplicationComponent
     public $tempdir;
 
     /**
-     * Creates and returns generator instance.
+     * Returns generator instance.
      *
-     * @return \Knp\Snappy\AbstractGenerator
+     * @return \Knp\Snappy\GeneratorInterface
      */
     abstract protected function getGenerator();
 
