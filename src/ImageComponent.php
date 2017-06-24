@@ -1,6 +1,6 @@
 <?php
 
-namespace Snappy;
+namespace dmitrivereshchagin\yii\snappy;
 
 use Knp\Snappy\Image;
 

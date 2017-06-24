@@ -1,9 +1,6 @@
 <?php
 
-namespace Snappy;
-
-use CApplicationComponent;
-use Yii;
+namespace dmitrivereshchagin\yii\snappy;
 
 /**
  * Base class for generator components.
@@ -13,7 +10,7 @@ use Yii;
  * @method string getOutput(array|string $input, array $options)
  * @method string getOutputFromHtml(array|string $html, array $options)
  */
-abstract class AbstractComponent extends CApplicationComponent
+abstract class AbstractComponent extends \CApplicationComponent
 {
     /**
      * @var string Path to wkhtmltox binary
@@ -58,6 +55,6 @@ abstract class AbstractComponent extends CApplicationComponent
      */
     protected function resolveTempdir()
     {
-        return $this->tempdir ?: Yii::app()->getParams()->itemAt('snappyTempdir');
+        return $this->tempdir ?: \Yii::app()->getParams()->itemAt('snappyTempdir');
     }
 }

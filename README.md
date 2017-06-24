@@ -18,13 +18,13 @@ following in configuration `components` section:
 
 ```php
 'pdf' => array(
-    'class' => 'Snappy\PdfComponent',
+    'class' => 'dmitrivereshchagin\\yii\\snappy\\PdfComponent',
     'binary' => '/usr/local/bin/wkhtmltopdf',
     'options' => array('orientation' => 'landscape'),
     'tempdir' => __DIR__.'/../runtime/pdf',
 ),
 'image' => array(
-    'class' => 'Snappy\ImageComponent',
+    'class' => 'dmitrivereshchagin\\yii\\snappy\\ImageComponent',
     'binary' => '/usr/local/bin/wkhtmltoimage',
     'tempdir' => __DIR__.'/../runtime/image',
 ),
