@@ -10,7 +10,7 @@ image formats.
 Installation using [Composer][c] should be straightforward
 
 ```
-composer require dmitrivereshchagin/yii-snappy
+% composer require dmitrivereshchagin/yii-snappy
 ```
 
 To register components in your application add something like the
@@ -21,12 +21,12 @@ following in configuration `components` section:
     'class' => 'dmitrivereshchagin\\yii\\snappy\\PdfComponent',
     'binary' => '/usr/local/bin/wkhtmltopdf',
     'options' => array('orientation' => 'landscape'),
-    'tempdir' => __DIR__.'/../runtime/pdf',
+    'tempdir' => basename(__DIR__).'/runtime/pdf',
 ),
 'image' => array(
     'class' => 'dmitrivereshchagin\\yii\\snappy\\ImageComponent',
     'binary' => '/usr/local/bin/wkhtmltoimage',
-    'tempdir' => __DIR__.'/../runtime/image',
+    'tempdir' => basename(__DIR__).'/runtime/image',
 ),
 ```
 
