@@ -1,13 +1,13 @@
 # yii-snappy
 
-This is a basic wrapper around [Snappy] [s] implemented as [Yii] [y]
+This is a basic wrapper around [Snappy][s] implemented as [Yii][y]
 application component.  Snappy is a PHP library that uses
-[wkhtmltopdf and wkhtmltoimage] [w] to render HTML into PDF and various
+[wkhtmltopdf and wkhtmltoimage][w] to render HTML into PDF and various
 image formats.
 
 ## Installation
 
-Installation using [Composer] [c] should be straightforward
+Installation using [Composer][c] should be straightforward
 
 ```
 composer require dmitrivereshchagin/yii-snappy
@@ -98,7 +98,7 @@ Yii::app()->request->sendFile(
 ## Credits
 
 This code uses Snappy library.  Snappy has been originally developed
-by [KnpLabs] [k] team.
+by [KnpLabs][k] team.
 
 [c]: https://getcomposer.org
 [k]: http://knplabs.com
