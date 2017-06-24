@@ -16,10 +16,12 @@ abstract class AbstractComponent extends \CApplicationComponent
      * @var string Path to wkhtmltox binary
      */
     public $binary;
+
     /**
      * @var array Command line options
      */
     public $options = array();
+
     /**
      * @var string Path to directory used for temporary files
      */
@@ -37,13 +39,12 @@ abstract class AbstractComponent extends \CApplicationComponent
      */
     public function __call($name, $parameters)
     {
-        if (!method_exists('Knp\Snappy\GeneratorInterface', $name)) {
+        if (! method_exists('Knp\\Snappy\\GeneratorInterface', $name)) {
             return parent::__call($name, $parameters);
         }
 
-        $generator = $this->getGenerator()
-            ->setTemporaryFolder($this->resolveTempdir())
-        ;
+        $generator = $this->getGenerator();
+        $generator->setTemporaryFolder($this->resolveTempdir());
 
         return call_user_func_array(array($generator, $name), $parameters);
     }
